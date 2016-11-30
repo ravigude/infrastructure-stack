@@ -11,7 +11,7 @@ module "my_jenkins" {
   subnet_id = "subnet-2370f30e"
   security_groups =  "sg-d4691ba9 "
   root_volume_size = "40"
-  app_name = "devops-jenkins-master"
+  app_name = "devops_jenkins_master"
   app_env = "dev"
 
 }
