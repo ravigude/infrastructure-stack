@@ -13,5 +13,6 @@ module "my_jenkins" {
   root_volume_size = "40"
   app_name = "devops_jenkins_master"
   app_env = "dev"
+  ec2_iam_instance_role ="DevopsIAMROle"
 
 }
