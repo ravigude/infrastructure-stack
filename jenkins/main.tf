@@ -19,7 +19,7 @@ module "my_jenkins" {
 }
 
 module "my_jenkins_elb" {
-source = "git::https://github.kdc.capitalone.com/terraform/tf_module_aws_elb_http_ec2.git"
+source = "git::https://github.com/terraform/tf_module_aws_elb_http_ec2.git"
 elb_name="devops-jenkins-elb"
 subnets = "subnet-2070f30d"
 security_groups = "sg-d3691bae"
