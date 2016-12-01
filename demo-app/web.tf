@@ -1,7 +1,4 @@
-provider "aws" {
-  region = "us-east-1"
-}
-
+ 
 # Web  Modules
 
 module "demo_web_elb" {
