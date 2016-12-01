@@ -11,7 +11,7 @@ module "demo_web_elb" {
   instance_protocol = "http"
   unhealthy_threshold = "5"
   app_name = "demo"
-  app_type = "web"
+ 
   app_env = "dev"
 
   }
