@@ -69,7 +69,7 @@ source = "git::https://github.com/skdandamudi/tf_module_aws_elb_asg.git"
 }
 
 module "demo_web_asg_scale_up" {
-  source = "git::https://github.kdc.capitalone.com/terraform/tf_aws_autoscale_policy.git"
+  source = "git::https://github.com/terraform/tf_aws_autoscale_policy.git"
   app_name = "${var.app_name}"
   app_type = "app"
   app_env = "${var.app_env}"
@@ -79,7 +79,7 @@ module "demo_web_asg_scale_up" {
 }
 
 module "demo_web_asg_scale_down" {
-  source = "git::https://github.kdc.capitalone.com/terraform/tf_aws_autoscale_policy.git"
+  source = "git::https://github.com/terraform/tf_aws_autoscale_policy.git"
   app_name = "${var.app_name}"
   app_type = "app"
   app_env = "${var.app_env}"
@@ -89,13 +89,13 @@ module "demo_web_asg_scale_down" {
 }
 
 module "demo_web_asg_stack_notifications" {
-  source = "git::https://github.kdc.capitalone.com/terraform/tf_aws_auto_scaling_notification.git"
+  source = "git::https://github.com/terraform/tf_aws_auto_scaling_notification.git"
   asg_names = "${module.demo_web_asg.asg_id}"
   asg_snstopicarn = "${lookup(var.sns_arn, concat(var.aws_region, ".", var.app_env))}"
 }
 
 module "demo_web_cpu_high_alarm" {
-  source = "git::https://github.kdc.capitalone.com/terraform/tf_aws_cloudwatch_metric_alarm.git"
+  source = "git::https://github.com/terraform/tf_aws_cloudwatch_metric_alarm.git"
   is_create_resource = "${lookup(var.is_create_alarm, concat(var.aws_region, ".", var.app_env))}"
   app_name = "${var.app_name}"
   app_type = "web"
@@ -115,7 +115,7 @@ module "demo_web_cpu_high_alarm" {
 }
 
 module "demo_web_cpu_low_alarm" {
-  source = "git::https://github.kdc.capitalone.com/terraform/tf_aws_cloudwatch_metric_alarm.git"
+  source = "git::https://github.com/terraform/tf_aws_cloudwatch_metric_alarm.git"
   is_create_resource = "${lookup(var.is_create_alarm, concat(var.aws_region, ".", var.app_env))}"
   app_name = "${var.app_name}"
   app_type = "web"
@@ -135,7 +135,7 @@ module "demo_web_cpu_low_alarm" {
 }
 
 module "demo_web_network_in_high_alarm" {
-  source = "git::https://github.kdc.capitalone.com/terraform/tf_aws_cloudwatch_metric_alarm.git"
+  source = "git::https://github.com/terraform/tf_aws_cloudwatch_metric_alarm.git"
   is_create_resource = "${lookup(var.is_create_alarm, concat(var.aws_region, ".", var.app_env))}"
   app_name = "${var.app_name}"
   app_type = "web"
@@ -154,7 +154,7 @@ module "demo_web_network_in_high_alarm" {
 
 }
 module "demo_web_network_in_low_alarm" {
-source = "git::https://github.kdc.capitalone.com/terraform/tf_aws_cloudwatch_metric_alarm.git"
+source = "git::https://github.com/terraform/tf_aws_cloudwatch_metric_alarm.git"
   is_create_resource = "${lookup(var.is_create_alarm, concat(var.aws_region, ".", var.app_env))}"
   app_name = "${var.app_name}"
   app_type = "web"
@@ -176,7 +176,7 @@ source = "git::https://github.kdc.capitalone.com/terraform/tf_aws_cloudwatch_met
 #############  ELB Alarms #######
 
 module "demo_web_elb_5XX_alarm" {
-  source = "git::https://github.kdc.capitalone.com/terraform/tf_aws_elb_cloudwatch_alarm.git"
+  source = "git::https://github.com/terraform/tf_aws_elb_cloudwatch_alarm.git"
   is_create_resource = "${lookup(var.is_create_alarm, concat(var.aws_region, ".", var.app_env))}"
   app_name = "${var.app_name}"
   app_type = "web"
@@ -197,7 +197,7 @@ module "demo_web_elb_5XX_alarm" {
 #############  ELB SurgeQueue Alarms #######
 
 module "demo_web_elb_surgequeue_alarm" {
-  source = "git::https://github.kdc.capitalone.com/terraform/tf_aws_elb_cloudwatch_alarm.git"
+  source = "git::https://github.com/terraform/tf_aws_elb_cloudwatch_alarm.git"
   is_create_resource = "${lookup(var.is_create_alarm, concat(var.aws_region, ".", var.app_env))}"
   app_name = "${var.app_name}"
   app_type = "web"
@@ -219,7 +219,7 @@ module "demo_web_elb_surgequeue_alarm" {
 
 
 module "demo_web_elb_latency_alarm" {
-  source = "git::https://github.kdc.capitalone.com/terraform/tf_aws_elb_cloudwatch_alarm.git"
+  source = "git::https://github.com/terraform/tf_aws_elb_cloudwatch_alarm.git"
   is_create_resource = "${lookup(var.is_create_alarm, concat(var.aws_region, ".", var.app_env))}"
   app_name = "${var.app_name}"
   app_type = "web"
@@ -239,7 +239,7 @@ module "demo_web_elb_latency_alarm" {
 
 #############  ELB Spill over Alarms #######
 module "demo_web_elb_spillover_alarm" {
-  source = "git::https://github.kdc.capitalone.com/terraform/tf_aws_elb_cloudwatch_alarm.git"
+  source = "git::https://github.com/terraform/tf_aws_elb_cloudwatch_alarm.git"
   is_create_resource = "${lookup(var.is_create_alarm, concat(var.aws_region, ".", var.app_env))}"
   app_name = "${var.app_name}"
   app_type = "web"
