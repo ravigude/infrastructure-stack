@@ -9,7 +9,7 @@ module "my_jenkins" {
   ec2_instance_type = "m3.medium"
   ec2_user_login_key = "navitas-devops-ssh"
   subnet_id = "subnet-2370f30e"
-  security_groups =  "sg-d4691ba9 "
+  security_groups =  "sg-d4691ba9"
   root_volume_size = "40"
   app_name = "devops_jenkins_master"
   app_env = "dev"
