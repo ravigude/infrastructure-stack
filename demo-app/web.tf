@@ -6,7 +6,7 @@ provider "aws" {
 
 module "demo_web_elb" {
   source = "git::https://github.com/skdandamudi/tf_module_aws_elb_http.git"
-  elb_name="demo_web_elb-${var.timestamp}"
+  elb_name="demo_web_elb-dev"
   subnets = "subnet-2070f30d"
   security_groups = "sg-d5691ba8"
   elb_healthcheck_url = "TCP:22"

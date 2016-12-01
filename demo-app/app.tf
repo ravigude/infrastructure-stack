@@ -6,7 +6,7 @@ provider "aws" {
 
 module "demo_app_elb" {
   source = "git::https://github.com/skdandamudi/tf_module_aws_elb_http.git"
-  elb_name="${var.app_env}-app-${var.timestamp}"
+  elb_name="demo_app_elb_dev"
   subnets = "subnet-2370f30e"
   security_groups = "sg-d4691ba9"
   elb_healthcheck_url = "TCP:22"
@@ -15,7 +15,7 @@ module "demo_app_elb" {
   unhealthy_threshold = "5"
   app_name = "demo"
   app_type = "app"
-  app_env = "dev"
+
 
   }
 
@@ -24,7 +24,7 @@ module "demo_app_elb" {
 
 module "demo_app_asg" {
 source = "git::https://github.com/skdandamudi/tf_module_aws_asg.git"
-  asg_name = "${var.app_name}_app_asg"
+  asg_name = "demo_app_asg_dev"
   load_balancer_names =  "${module.demo_app_elb.elb_name}"
   availability_zones = "us-east-1a"
   vpc_zone_subnets = "subnet-2370f30e"
