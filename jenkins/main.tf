@@ -14,5 +14,6 @@ module "my_jenkins" {
   app_name = "devops_jenkins_master"
   app_env = "dev"
   ec2_iam_instance_role ="DevopsIAMROle"
+  ec2_user_data = "user-data.sh"
 
 }
