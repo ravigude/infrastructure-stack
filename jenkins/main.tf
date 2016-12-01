@@ -17,3 +17,18 @@ module "my_jenkins" {
   ec2_user_data = "user-data.sh"
 
 }
+
+module "my_jenkins_elb" {
+source = "git::https://github.kdc.capitalone.com/terraform/tf_module_aws_elb_ec2.git"
+elb_name="devops-jenkins-elb"
+subnets = "subnet-2070f30d"
+security_groups = "sg-d3691bae"
+elb_healthcheck_url = "TCP:22"
+instance_port = 8080
+instance_protocol = "http"
+app_name = "devops"
+app_type = "app"
+app_env = "dev"
+stack_name="${var.stack_name}"
+instances ="${module.my_jenkins.ec2_instance_id}"
+}

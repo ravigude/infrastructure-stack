@@ -19,7 +19,7 @@ module "demo_app_elb" {
   CMDBEnvironment = "${lookup(var.cmdb, var.app_env)}"
   OwnerContact = "${var.contact}"
   stack_name="${var.stack_name}"
-  snstopicarn = "${lookup(var.sns_arn, concat(var.aws_region, ".", var.app_env))}"
+  
 }
 
 # Userdata for app
