@@ -12,7 +12,7 @@ module "demo_web_elb" {
   unhealthy_threshold = "5"
   app_name = "demo"
  
-  app_env = "dev"
+ 
 
   }
 
