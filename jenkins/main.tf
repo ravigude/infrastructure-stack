@@ -26,9 +26,8 @@ security_groups = "sg-d3691bae"
 elb_healthcheck_url = "TCP:22"
 instance_port = 8080
 instance_protocol = "http"
-app_name = "devops"
+app_name = "devops_jenkins_master"
 app_type = "app"
 app_env = "dev"
-stack_name="${var.stack_name}"
 instances ="${module.my_jenkins.ec2_instance_id}"
 }
